@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    font-family: "Poppins", sans-serif;
+}
+
+.card{
+    transition: transform 0.3s, width 0.3s, height 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.1); /* Multiplica o tamanho original por 2 */
+    
+}

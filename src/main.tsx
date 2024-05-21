@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import PrivateRoutes from './utils/PrivateRoutes'
 import Peixe from './pages/peixe'
 import Subscribe from './pages/subscribe'
+import PrivateRouteAuthenticated from './utils/PrivateRouteAuthenticated'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -18,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <AuthProvider>
       <BrowserRouter>
         <Routes>
-            <Route path="/login" element={<Login/>}/>
+            
             <Route path="/" element={<Home/>}/>
             <Route path="/subscribe" element={<Subscribe/>}/>
            
@@ -28,6 +29,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route element={<PrivateRoutes/>}>
                 
                
+            </Route>
+
+            <Route element={<PrivateRouteAuthenticated/>}>
+                <Route path="/login" element={<Login/>}/>
             </Route>
             
         </Routes>

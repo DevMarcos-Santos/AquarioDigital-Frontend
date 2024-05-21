@@ -18,45 +18,83 @@ export default function Subscribe(){
     const [number2, setNumber2] = useState("");
     const [number3, setNumber3] = useState("");
     const [number4, setNumber4] = useState("");
+
+    const [buttonDisabled, setButtonDisabled] = useState(false);
     
     function send(){
+        setButtonDisabled(true);
         const object = {
             username: nome,
             surname: sobrenome,
             email: email,
             password: senha,
         }
-        peixelandia_api.post("/users/confirmEmail", object).then(res => {
-            setModalIsOpen(true);
-        }).catch(err => {
-            console.log(err);
-        })
+        const loadingToast = toast.loading("Aguarde");
+
+        if(senha.length < 8){
+            toast.dismiss(loadingToast);
+            toast.error("A senha precisa ter mais de 8 caracteres!");
+            setButtonDisabled(false);
+        }else if(!email.includes("@") || !email.split("@")[1].includes(".")){
+            toast.dismiss(loadingToast);
+            toast.error("E-mail inválido");
+            setButtonDisabled(false);
+        }
+        else{
+            peixelandia_api.post("/users/confirmEmail", object).then(res => {
+                toast.dismiss(loadingToast);
+                setModalIsOpen(true);
+                setButtonDisabled(false);
+    
+    
+                
+            }).catch(err => {
+                toast.dismiss(loadingToast);
+    
+                    
+                   
+                    setButtonDisabled(false);
+                    toast.error("Email já cadastrado!");
+            
+    
+               
+            })
+        }
+
+        
     }
 
     function closeModal(){
         setModalIsOpen(false);
     }
 
-    function verfyEmail(){
+    function verifyEmail(){
         const object = {
             username: nome,
             surname: sobrenome,
             email: email,
             password: senha,
         }
+
+        
         let codeString = number1 + number2 + number3 + number4;
         let code = parseInt(codeString, 10);
 
         peixelandia_api.post(`/users/create/${code}`, object).then(resp => {
-            toast.success("Usuário criado com sucesso!");
+            const loadingTest = toast.loading("Aguarde");
+            
+
+            setTimeout(() => {
+                toast.dismiss(loadingTest);
+            }, 1000)
 
             setTimeout(() => {
                 window.location.href = "/login"
-            }, 2000)
+            }, 1000)
             
-        }).catch((error) => {
+        }).catch(error => {
             toast.error("Código de verificação incorreto!");
-        })
+        });
     }
 
     return (
@@ -90,13 +128,13 @@ export default function Subscribe(){
                         maxlength="1" />
                 </div>
                 <div class="max-w-[260px] mx-auto mt-4">
-            <button type="submit" onClick={verfyEmail}
+            <button type="submit" onClick={verifyEmail}
                 class="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-gray-500 px-3.5 py-2.5 text-sm font-medium text-white shadow-sm shadow-indigo-950/10 hover:bg-gray-900 focus:outline-none focus:ring focus:ring-indigo-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 transition-colors duration-150">Verificar conta</button>
         </div>
             </div>
         </div>
             : <div></div>}
-            <div className="bg-white w-[450px] h-auto rounded-3xl flex flex-col items-center">
+            <div className="bg-white w-[450px] subscribe h-auto rounded-3xl flex flex-col items-center">
                 <div className="mt-8 flex">
                     <img className="w-16" src="./src/assets/images/iconFish.png"/>
                 </div>
@@ -117,7 +155,7 @@ export default function Subscribe(){
                         <Input value={senha}  onChange={e => setSenha(e.target.value)}  type="password" Children="Senha" />
                     </div>
                     <div className="mt-6">
-                        <Button onClick={send}  type="submit" children="Criar"/>
+                        <Button disabled={buttonDisabled} className="send" onClick={send} type="submit" children="Criar"/>
                     </div>
                     <div className="mt-5 mb-4">
                         <p>Ja possui uma conta? <Link to={"/login"} className="text-black font-bold underline">Entrar</Link></p>

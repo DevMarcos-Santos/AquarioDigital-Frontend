@@ -24,13 +24,13 @@ export default function Home(){
             cor: Cor
         }
 
-        console.log(object)
+      
 
      
 
         peixelandia_api.post("/peixes/find", object).then((resp) => {
         setPeixes(resp.data);
-        console.log(resp.data);
+      
 
         })
     }, [Nome, NomeCientifico, Pais, TipoAgua, Tamanho, Cor]);
@@ -65,13 +65,20 @@ export default function Home(){
                 </div>
             </div>
            
-            <div className="flex flex-row pl-10 mt-10 space-x-4 justify-center">
-                <Input value={Nome} onChange={HendleInputChangeNome} Children="Nome"/>
-                <Input value={NomeCientifico} onChange={HendleInputChangeNomeCientifico} Children="Nome científico"/>
+            <div className="flex flex-row pl-10 mt-10  justify-center inputs">
+                <div className="pr-2">
+                     <Input value={Nome} onChange={HendleInputChangeNome} Children="Nome"/>
+                </div>
+                <div className="pr-2">
+                    <Input value={NomeCientifico} onChange={HendleInputChangeNomeCientifico} Children="Nome científico"/>
+                </div>
+                <div className="pr-2">
                 <Input value={Pais} onChange={HendleInputChangePais} Children="País"/>
+                </div>
+                
             </div>
-                <div className="flex flex-row pl-10 mt-5 space-x-4 justify-center">
-                    <div className="flex flex-col ">
+                <div className="flex flex-row pl-10 mt-5  inputs justify-center">
+                    <div className="flex flex-col pr-2">
                         <label>Tipo de Água</label>
                         <select value={TipoAgua} onChange={HendleInputChangeAgua} className="w-80 h-10 rounded-lg border-2 bg-gray-100 border-gray-200">
                             <option value=""></option>
@@ -79,7 +86,7 @@ export default function Home(){
                             <option value="Salgada">Salgada</option>
                         </select>
                     </div>
-                    <div className="flex flex-col ">
+                    <div className="flex flex-col pr-2">
                         <label>Tamanho</label>
                         <select value={Tamanho} onChange={HendleInputChangeTamanho} className="w-80 h-10 rounded-lg border-2 bg-gray-100 border-gray-200">
                             <option value=""></option>  
@@ -88,10 +95,13 @@ export default function Home(){
                             <option value="Médio">Médio</option>
                         </select>
                     </div>
-                    <Input onChange={HendleInputChangeCor} value={Cor} Children="Cor"/>
+                    <div className="pr-2">
+                         <Input onChange={HendleInputChangeCor} value={Cor} Children="Cor"/>
+                    </div>
+                   
                 </div>
                 
-                <div className=" flex flex-wrap mt-10">
+                <div className=" flex flex-wrap mt-10 cards">
                     {peixes?.map((peixes, i) => {
                         return (
                             <div className="pl-6 mt-5">

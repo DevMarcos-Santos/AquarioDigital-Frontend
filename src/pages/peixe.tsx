@@ -17,7 +17,7 @@ export default function Peixe(){
     useEffect(() => {
         peixelandia_api.get(`/peixes/${id}`).then((resp) => {
         setPeixe(resp.data); 
-        console.log(resp.data);
+        
         
         })
     }, [id]);
@@ -44,7 +44,7 @@ export default function Peixe(){
     }, [tokenString])
 
     if(loading){
-        console.log(isAuthenticated);
+       
         return <div className=" h-screen text-4xl font-bold flex justify-center flex-col items-center te">
                     
                     Carregando  ...
@@ -73,12 +73,12 @@ export default function Peixe(){
             <div className="flex items-center w-full justify-center">
                 <h1 className="text-5xl text-white mt-16" style={{fontFamily: 'Staatliches'}}>{peixe.nome}</h1>
             </div>
-            <div className="flex flex-row pl-16 mt-10 space-x-5">
-                <div className="w-[600px]  rounded-2xl">
-                 <img className="rounded-2xl w-[600px] h-[380px] " src={`/src/assets/images/imagesPeixes/${peixe.imagem1}`} />
+            <div className="flex flex-row  pl-16 mt-10 imagesPeixes ">
+                <div className="w-[600px] peixes rounded-2xl pr-2">
+                    <img className="rounded-2xl w-[600px] h-[380px] " src={`/src/assets/images/imagesPeixes/${peixe.imagem1}`} />
                 </div>
-                <div className="w-[600px]  rounded-2xl">
-                 <img className="rounded-2xl w-[600px] h-[380px] " src={`/src/assets/images/imagesPeixes/${peixe.imagem2}`} />
+                <div className="w-[600px] peixes  rounded-2xl pl-2">
+                    <img className="rounded-2xl w-[600px] h-[380px] " src={`/src/assets/images/imagesPeixes/${peixe.imagem2}`} />
                 </div>
             </div>
             <div className="mt-10 flex flex-col items-center justify-center">

@@ -1,8 +1,8 @@
-import { Children } from "react"
+
 
 interface Props{
-    Children: React.ReactNode;
-    type: string;
+    Children?: React.ReactNode;
+    type?: string;
     value?: string;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }

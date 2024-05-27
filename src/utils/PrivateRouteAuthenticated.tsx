@@ -41,6 +41,6 @@ export default function PrivateRouteAuthenticated(){
     }
 
     
-    return isAuthenticated ? <Navigate to="/home"/> : <Login/>;
+    return isAuthenticated ? <Navigate to="/BuscarPeixes"/> : <Login/>;
    
 }

@@ -2,7 +2,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { peixelandia_api } from "../services/apiService";
 import { useEffect, useState } from "react";
-import Home from "../pages/home";
+
 
 
 export default function PrivateRoutes(){

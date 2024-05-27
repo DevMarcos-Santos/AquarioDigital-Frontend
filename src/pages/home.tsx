@@ -3,6 +3,13 @@ import Card from "../components/card";
 import Header from "../components/header";
 import Input from "../components/input";
 import { peixelandia_api } from "../services/apiService";
+import peixe_morto from '../assets/images/peixe-morto.png';
+import dashboard from '../assets/images/dashboard.jpg';
+
+
+
+
+
 
 
 export default function Home(){
@@ -13,6 +20,7 @@ export default function Home(){
     const [Tamanho, setTamanho] = useState("");
     const [Cor, setCor] = useState("");
     const [peixes, setPeixes] = useState([]);
+    
 
     useEffect(() => {
         const object = {
@@ -59,9 +67,9 @@ export default function Home(){
     return (
         <div>
             <Header/>
-            <div className="h-96 bg-cover bg-no-repeat" style={{backgroundImage: 'url(./src/assets/images/dashboard.jpg)'}}>
-                <div className="text-5xl text-white pt-20 pl-12" style={{fontFamily: 'Staatliches'}}>
-                    <h1>Desfrute do site com a <br/> maior variedade de peixes <br/> do brasil</h1>
+            <div className="h-96 bg-cover bg-no-repeat shark" style={{backgroundImage:`url(${dashboard})`}}>
+                <div className="text-5xl text-white pt-20 pl-12 descricao" style={{fontFamily: 'Staatliches'}}>
+                    <h1 >Existem mais de 34.200 <br/> espécies e tipos de peixe,  <br/>quantos você conhece?</h1>
                 </div>
             </div>
            
@@ -101,18 +109,27 @@ export default function Home(){
                    
                 </div>
                 
-                <div className=" flex flex-wrap mt-10 cards">
-                    {peixes?.map((peixes, i) => {
-                        return (
-                            <div className="pl-6 mt-5">
-                                <Card Imagem1={peixes.imagem1} Nome={peixes.nome} Id={peixes.id}/>
-                            </div>
-                        )
-                    } )}
-                    
+                {peixes.length === 0 ? 
+                    <div className="flex mt-20 flex-col justify-center mb-16 items-center w-full">
+                        <img className="w-20" src={peixe_morto}/>
+                        <p className="text-gray-900 font-bold mt-4">Nenhum resultado foi encontrado...</p>
+                    </div>
+                : <div className=" flex flex-wrap mt-10 items-center justify-center pr-7 cards mb-10">
+                {peixes?.map((peixes) => {
+                    return (
+                        <div className="pl-6 mt-5">
+                            <Card key={peixes["id"]} Imagem1={peixes["imagem1"]} Nome={peixes["nome"]} Id={peixes["id"]}/>
+                        </div>
+                    )
+                } )}
+                
 
 
-                </div>
+            </div>}
+
+                
+                
+                
         </div>
     )
 }

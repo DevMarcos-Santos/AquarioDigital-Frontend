@@ -1,16 +1,16 @@
-import React from 'react'
+
 import ReactDOM from 'react-dom/client'
 import '../global.css'
 import Login from './pages/login'
 import { Toaster } from 'react-hot-toast'
-import { AuthContext, AuthProvider } from './context/AuthProvider'
-import { UseAuth } from './context/AuthProvider/useAuth'
+import { AuthProvider } from './context/AuthProvider'
 import Home from './pages/home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import PrivateRoutes from './utils/PrivateRoutes'
 import Peixe from './pages/peixe'
 import Subscribe from './pages/subscribe'
 import PrivateRouteAuthenticated from './utils/PrivateRouteAuthenticated'
+import NotFound from './pages/404'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -21,11 +21,11 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Routes>
             
             <Route path="/" element={<Home/>}/>
-            <Route path="/subscribe" element={<Subscribe/>}/>
+            <Route path="/cadastro" element={<Subscribe/>}/>
            
-            <Route path="/home" element={<Home/>}/>
-            <Route path="/fish/:nome/:id" element={<Peixe/>}/>
-
+            <Route path="/BuscarPeixes" element={<Home/>}/>
+            <Route path="/peixe/:nome/:id" element={<Peixe/>}/>
+            <Route path="*" element={<NotFound/>}/>
             <Route element={<PrivateRoutes/>}>
                 
                

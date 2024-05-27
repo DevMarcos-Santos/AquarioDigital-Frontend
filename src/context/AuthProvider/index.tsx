@@ -1,8 +1,7 @@
-import React, {createContext, useEffect, useState,} from "react";
+import {createContext, useEffect, useState,} from "react";
 import { IAuthProvider, IContext } from "./types";
 import { peixelandia_api } from "../../services/apiService";
 import toast from "react-hot-toast";
-import { Navigate } from "react-router-dom";
 
 
 
@@ -24,7 +23,10 @@ export const AuthProvider = ({children}: IAuthProvider) => {
     }, [])
 
      function  authenticate (email: string, password: string){
-            
+    
+        return new Promise<void>((resolve) => {
+
+        
     const data = {
         email: email,
         password: password
@@ -34,9 +36,8 @@ export const AuthProvider = ({children}: IAuthProvider) => {
         peixelandia_api.post("/users/auth", data).then(function(response){
             toast.success("Login efetuado com sucesso!");
             localStorage.setItem("u", JSON.stringify(response.data));
-          
-           
-            window.location.href = "/home";
+            window.location.href = "/BuscarPeixes";
+            resolve();
 
             
                
@@ -48,10 +49,12 @@ export const AuthProvider = ({children}: IAuthProvider) => {
            
             
         
-        }).catch(function(error){
+        
+        }).catch(function(){
             toast.error("Dados de login incorretos!");
         });
-    }
+    });
+}
 
     function logout(){
          setUser(undefined);
@@ -60,7 +63,8 @@ export const AuthProvider = ({children}: IAuthProvider) => {
     }
 
     return (
-        <AuthContext.Provider value={{ ...user, authenticate, logout }}>
+        
+        <AuthContext.Provider value={{ user, authenticate ,logout }}>
             {children}
         </AuthContext.Provider>
     )

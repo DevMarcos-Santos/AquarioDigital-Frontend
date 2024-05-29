@@ -25,7 +25,30 @@ html{
 
 
 @media only screen and (max-width: 768px) {
+    .text-rodape{
+        padding-top:30px;
+    }
    
+
+    .items-rodape{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .descubra{
+        margin-bottom: 5px;
+        font-size: 19px;
+    }
+
+    .especiesRodape{
+        padding: 0;
+        margin-top:30px;
+    }
+
+    .rodape-text{
+        width:auto !important;
+    }
 
     .login{
         width:100%;
@@ -114,6 +137,18 @@ html{
 }
 
 @media only screen and (min-width: 768px) and (max-width:1180px){
+
+    .items-rodape{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .especiesRodape{
+        padding: 0;
+        margin-top:30px;
+    }
+
     .inputs{
         flex-direction: column;
       

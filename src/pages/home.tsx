@@ -5,6 +5,7 @@ import Input from "../components/input";
 import { peixelandia_api } from "../services/apiService";
 import peixe_morto from '../assets/images/peixe-morto.png';
 import dashboard from '../assets/images/dashboard.jpg';
+import Foot from "../components/foot";
 
 
 
@@ -110,11 +111,11 @@ export default function Home(){
                 </div>
                 
                 {peixes.length === 0 ? 
-                    <div className="flex mt-20 flex-col justify-center mb-16 items-center w-full">
+                    <div className="flex mt-20 flex-col justify-center mb-20 items-center w-full">
                         <img className="w-20" src={peixe_morto}/>
                         <p className="text-gray-900 font-bold mt-4">Nenhum resultado foi encontrado...</p>
                     </div>
-                : <div className=" flex flex-wrap mt-10 items-center justify-center pr-7 cards mb-10">
+                : <div className=" flex flex-wrap mt-10 items-center justify-center pr-7 cards mb-20">
                 {peixes?.map((peixes) => {
                     return (
                         <div className="pl-6 mt-5">
@@ -126,7 +127,9 @@ export default function Home(){
 
 
             </div>}
-
+            <div>
+                <Foot/>
+            </div>
                 
                 
                 

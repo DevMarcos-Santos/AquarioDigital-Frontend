@@ -7,6 +7,7 @@ import icon from '../assets/images/iconFish.png';
 import perfil from '../assets/images/perfil.png';
 import banner from '../assets/images/bannerPeixe.jpg';
 import Card from "../components/card";
+import Foot from "../components/foot";
 
 
 export default function Peixe(){
@@ -224,7 +225,9 @@ export default function Peixe(){
                     } )}
         </div>
     </div>
-            
+        <div>
+            <Foot/>
+        </div>
            
         </div>  
     )

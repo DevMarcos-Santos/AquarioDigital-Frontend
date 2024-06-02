@@ -11,6 +11,7 @@ import Peixe from './pages/peixe'
 import Subscribe from './pages/subscribe'
 import PrivateRouteAuthenticated from './utils/PrivateRouteAuthenticated'
 import NotFound from './pages/404'
+import Aquarismo from './pages/aquarismo'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -26,8 +27,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             <Route path="/BuscarPeixes" element={<Home/>}/>
             <Route path="/peixe/:nome/:id" element={<Peixe/>}/>
             <Route path="*" element={<NotFound/>}/>
+            <Route path="/aquarismo" element={<Aquarismo/>}/>
             <Route element={<PrivateRoutes/>}>
-                
+            
                
             </Route>
 

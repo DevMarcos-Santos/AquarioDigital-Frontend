@@ -21,14 +21,63 @@ html{
 }
 
 
+.nav{
+    border-bottom: 0.5px solid #c5c5c5;
+}
+
+.borda{
+    border: 1px solid #d8d7d7;
+    padding:10px;
+   
+}
 
 
+
+@media only screen and (min-width: 768px){
+    .menu{
+        display: none;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     .text-rodape{
         padding-top:30px;
     }
-   
+
+    .cards{
+        margin-left:40px;
+        margin-bottom:30px;
+    }
+
+    .doce{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .salgada{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .perfil{
+       margin-right: 20px;
+    }
+
+  
+
+    .aquarismo{
+        display: none;
+    }
+    
+    .menu{
+        display: inline-block;
+    }
 
     .items-rodape{
         display: flex;

@@ -115,7 +115,7 @@ export default function Home(){
                         <img className="w-20" src={peixe_morto}/>
                         <p className="text-gray-900 font-bold mt-4">Nenhum resultado foi encontrado...</p>
                     </div>
-                : <div className=" flex flex-wrap mt-10 items-center justify-center pr-7 cards mb-20">
+                : <div className=" flex flex-wrap mt-10 items-center justify-center pr-7  mb-20">
                 {peixes?.map((peixes) => {
                     return (
                         <div className="pl-6 mt-5">

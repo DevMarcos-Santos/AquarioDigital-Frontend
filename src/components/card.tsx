@@ -8,6 +8,7 @@ interface Props{
     Id?: number;
     hidden?: string;
     borda?: string;
+    hiddenOferta?: string;
 }
 
 
@@ -41,6 +42,9 @@ export default function Card(props: Props){
                 </div>
                 <div className={`mb-4 ${props.hidden}`}>
                     <Link to={`/peixe/${props.Nome}/${props.Id}`}> <button onClick={scroll} className="bg-gray-900  text-white font-bold w-52 h-10 rounded-md mt-5">Mais</button></Link>
+                </div>
+                <div className={`w-full flex justify-end p-2 ${props.hiddenOferta} `}>
+                    <div className="bg-green-500 p-1 font-bold rounded-md">Em oferta</div>
                 </div>
             </div>
         </div>

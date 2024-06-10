@@ -219,7 +219,7 @@ export default function Peixe(){
             {peixes?.map((peixes) => {
                         return (
                             <div className="pl-6 mt-5">
-                                <Card key={peixes["id"]} Imagem1={peixes["imagem1"]} Nome={peixes["nome"]} Id={peixes["id"]}/>
+                                <Card key={peixes["id"]} hiddenOferta="hidden" Imagem1={peixes["imagem1"]} Nome={peixes["nome"]} Id={peixes["id"]}/>
                             </div>
                         )
                     } )}

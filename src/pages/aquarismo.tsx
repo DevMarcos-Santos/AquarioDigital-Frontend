@@ -34,19 +34,19 @@ export default function Aquarismo(){
             </div>
             <div className="w-full flex flex-wrap mt-4  items-center justify-center">
                 <div className="mr-4 mb-4 cards">
-                    <Card Imagem1="tetra1" Id={41} Nome="Tetra Neon "/>
+                    <Card hiddenOferta="hidden" Imagem1="tetra1" Id={41} Nome="Tetra Neon "/>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Card Id={42} Imagem1="guppy1" Nome="Guppy"/>
+                    <Card hiddenOferta="hidden" Id={42} Imagem1="guppy1" Nome="Guppy"/>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Card Id={40} Imagem1="betta1" Nome="Betta"/>
+                    <Card hiddenOferta="hidden" Id={40} Imagem1="betta1" Nome="Betta"/>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Card Id={43} Imagem1="corydora1" Nome="Corydora"/>
+                    <Card hiddenOferta="hidden" Id={43} Imagem1="corydora1" Nome="Corydora"/>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Card Id={30} Imagem1="disco1" Nome="Acará-Disco"/>
+                    <Card hiddenOferta="hidden" Id={30} Imagem1="disco1" Nome="Acará-Disco"/>
                 </div>
             </div>
             <div className="w-full pl-10 mt-5 salgada  mb-5 flex justify-center items-center">
@@ -54,19 +54,19 @@ export default function Aquarismo(){
             </div>
             <div className="w-full flex flex-wrap mt-4 items-center justify-center ">
                 <div className="mr-4 mb-4 cards">
-                    <Card Imagem1="palhaco1" Id={44} Nome="Peixe-palhaço"/>
+                    <Card hiddenOferta="hidden" Imagem1="palhaco1" Id={44} Nome="Peixe-palhaço"/>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Card Imagem1="patela1" Id={45}  Nome="Cirurgião-patela"/>
+                    <Card hiddenOferta="hidden" Imagem1="patela1" Id={45}  Nome="Cirurgião-patela"/>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Card Imagem1="mandarim1" Id={46} Nome="Mandarim"/>
+                    <Card hiddenOferta="hidden" Imagem1="mandarim1" Id={46} Nome="Mandarim"/>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Card Imagem1="anjo1" Id={47} Nome="Peixe-anjo"/>
+                    <Card hiddenOferta="hidden" Imagem1="anjo1" Id={47} Nome="Peixe-anjo"/>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Card Imagem1="gobio1" Id={48} Nome="Góbio"/>
+                    <Card hiddenOferta="hidden" Imagem1="gobio1" Id={48} Nome="Góbio"/>
                 </div>
             </div>
             
@@ -78,7 +78,7 @@ export default function Aquarismo(){
             </div>
             <div className=" mb-4 flex flex-wrap items-center justify-center">
                 <div className="mr-4 mb-4 cards">
-                     <Link to={"https://amzn.to/3yLoLdu"} target="_blank"><Card borda="borda" Imagem1="aquario1" Nome="Boyu - Aquário Curvo Ms-220 7,5L Preto 220v" Id={0} hidden={"hidden "}/></Link>
+                     <Link to={"https://amzn.to/3yLoLdu"} target="_blank"><Card borda="borda" Imagem1="aquario1" Nome="Boyu - Aquário Curvo Ms-220 7,5L Preto 220v" Id={0} hiddenOferta="hidden" hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
                     <Link to={"https://amzn.to/3wXhbvK"} target="_blank"><Card borda="borda" Imagem1="aquario2" Nome="Boyu - Aquário Curvo Ms-320 20L Preto 110v" Id={0} hidden={"hidden "}/></Link>
@@ -87,7 +87,7 @@ export default function Aquarismo(){
                 <Link to={"https://amzn.to/3X6s7BQ"} target="_blank"><Card borda="borda" Imagem1="aquario3" Nome="Aquário Betteira com Iluminação LED " Id={0} hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Link to={"https://amzn.to/3V2d5dP"} target="_blank"><Card borda="borda" Imagem1="aquario4" Nome="Boyu - Aquário Curvo Ms-320 20L Preto 220v" Id={0} hidden={"hidden "}/></Link>
+                    <Link to={"https://amzn.to/3V2d5dP"} target="_blank"><Card borda="borda" Imagem1="aquario4" Nome="Boyu - Aquário Curvo Ms-320 20L Preto 220v" Id={0} hiddenOferta="hidden" hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
                     <Link to={"https://amzn.to/3KrsjnK"} target="_blank"><Card borda="borda" Imagem1="aquario5" Nome="Aquário de Vidro Retangular Teruo Yamamoto" Id={0} hidden={"hidden "}/></Link>
@@ -105,10 +105,10 @@ export default function Aquarismo(){
                     <Link to={"https://amzn.to/3RanAdE"} target="_blank"><Card borda="borda" Imagem1="filtro2" Nome="Maxxi Power Filtro Externo Hf-360 360L E H 220V" Id={0} hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                <Link to={"https://amzn.to/3RbaMDU"} target="_blank"><Card borda="borda" Imagem1="filtro3" Nome="Pawfly Filtro interno de aquário" Id={0} hidden={"hidden "}/></Link>
+                <Link to={"https://amzn.to/3RbaMDU"} target="_blank"><Card borda="borda" Imagem1="filtro3" Nome="Pawfly Filtro interno de aquário" hiddenOferta="hidden" Id={0} hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Link to={"https://amzn.to/3V8QdJL"} target="_blank"><Card borda="borda" Imagem1="filtro4" Nome="Maxxi Power Filtro Externo 60L E H 220V" Id={0} hidden={"hidden "}/></Link>
+                    <Link to={"https://amzn.to/3V8QdJL"} target="_blank"><Card borda="borda" Imagem1="filtro4" Nome="Maxxi Power Filtro Externo 60L E H 220V" hiddenOferta="hidden" Id={0} hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
                     <Link to={"https://amzn.to/3yCFpvC"} target="_blank"><Card borda="borda" Imagem1="filtro5" Nome="Filtro Externo Maxxi Power Hf-1000" Id={0} hidden={"hidden "}/></Link>
@@ -120,19 +120,19 @@ export default function Aquarismo(){
             </div>
             <div className=" mb-4 flex flex-wrap items-center justify-center">
                 <div className="mr-4 mb-4 cards">
-                     <Link to={"https://amzn.to/3yJScwn"} target="_blank"><Card borda="borda" Imagem1="termosato3" Nome="Termostato Oceantech 200W - 110V" Id={0} hidden={"hidden "}/></Link>
+                     <Link to={"https://amzn.to/3yJScwn"} target="_blank"><Card borda="borda" Imagem1="termosato3" Nome="Termostato Oceantech 200W - 110V" hiddenOferta="hidden" Id={0} hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Link to={"https://amzn.to/3V0qy5M"} target="_blank"><Card borda="borda" Imagem1="termosato2" Nome="Termostato com Aquecedor - Q3-100W " Id={0} hidden={"hidden "}/></Link>
+                    <Link to={"https://amzn.to/3V0qy5M"} target="_blank"><Card borda="borda" Imagem1="termosato2" Nome="Termostato com Aquecedor - Q3-100W " hiddenOferta="hidden" Id={0} hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                <Link to={"https://amzn.to/3V4auQE"} target="_blank"><Card borda="borda" Imagem1="termosato1" Nome="HOPAR TERMOSTATO H-386 200W 127V" Id={0} hidden={"hidden "}/></Link>
+                <Link to={"https://amzn.to/3V4auQE"} target="_blank"><Card borda="borda" Imagem1="termosato1" Nome="HOPAR TERMOSTATO H-386 200W 127V" Id={0} hiddenOferta="hidden" hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
                     <Link to={"https://amzn.to/3V4awIg"} target="_blank"><Card borda="borda" Imagem1="termosato4" Nome="Termostato Roxin HT-1300/Q3-200w" Id={0} hidden={"hidden "}/></Link>
                 </div>
                 <div className="mr-4 mb-4 cards">
-                    <Link to={"https://amzn.to/3V8rZ1V"} target="_blank"><Card borda="borda" Imagem1="termosato5" Nome="HOPAR TERMOSTATO K-50 25W 220V" Id={0} hidden={"hidden "}/></Link>
+                    <Link to={"https://amzn.to/3V8rZ1V"} target="_blank"><Card borda="borda"  Imagem1="termosato5" Nome="HOPAR TERMOSTATO K-50 25W 220V" Id={0} hidden={"hidden "}/></Link>
                 </div>
                 
             </div>

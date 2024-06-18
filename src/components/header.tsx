@@ -43,6 +43,7 @@ export default function Header(){
                 <div className="w-full flex justify-end pr-10">
                     <div className="flex items-center flex-row  ">
                         <Link className="aquarismo mr-10" to={"/aquarismo"}>Aquarismo</Link>
+                        <Link className="aquarismo mr-10" to={"/pesca"}>Pesca</Link>
                         <img onClick={toggleMenu} className="w-9 cursor-pointer perfil" src={perfil}/>
                     </div>
                     {isOpen ? 
@@ -66,8 +67,10 @@ export default function Header(){
                 </div>
             </div>
             {menuIsOpen ?
-            <div className="flex items-start justify-end pr-10 mt-4 mb-4 ">
+            <div className="flex flex-col items-end justify-end pr-10 mt-4 mb-4 ">
                 <Link className="underline" to={"/aquarismo"}>Aquarismo</Link>
+              
+                <Link className="underline mt-2" to={"/pesca"}>Pesca</Link>
             </div>
              : 
              <div></div> }

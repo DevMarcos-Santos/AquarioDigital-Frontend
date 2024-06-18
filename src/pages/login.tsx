@@ -10,6 +10,8 @@ import banner from '../assets/images/banner.jpg';
 import icon from '../assets/images/iconFish.png';
 import close from '../assets/images/close.png';
 
+// @ts-expect-error: ignore 
+import { Helmet } from 'react-helmet';
 
 
 export default function Login(){
@@ -139,6 +141,10 @@ export default function Login(){
 
     return (
         <div className="h-screen bg-cover bg-no-repeat flex justify-center items-center " style={{backgroundImage: `url(${banner})`}}>
+             <Helmet>
+            
+            <title>Aquário Digital - Login</title>
+            </Helmet>
             {modalConfirmEmail ? 
                 <div className="h-screen w-screen fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50">
                 <div className="bg-white w-[600px] h-auto rounded-lg">

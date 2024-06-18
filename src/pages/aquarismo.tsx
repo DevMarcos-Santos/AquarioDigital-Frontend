@@ -2,12 +2,18 @@ import Card from "../components/card";
 import Foot from "../components/foot";
 import Header from "../components/header";
 import { Link } from "react-router-dom";
-
+// @ts-expect-error: ignore 
+import { Helmet } from 'react-helmet';
 
 
 export default function Aquarismo(){
     return (
         <div>
+              <Helmet>
+            
+            <title>Guia Completo de Aquarismo: Cuidados, Espécies e Equipamentos</title>
+            <meta name="description" content="Descubra tudo sobre aquarismo: dicas de cuidados, informações sobre espécies de peixes, plantas aquáticas e os principais equipamentos necessários para montar e manter um aquário saudável e bonito."/>
+            </Helmet>
             <div>
                 <Header/>
             </div>

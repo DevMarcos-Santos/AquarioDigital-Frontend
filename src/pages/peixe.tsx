@@ -3,11 +3,12 @@ import { peixelandia_api } from "../services/apiService";
 import { useEffect, useState } from "react";
 import Button from "../components/button";
 import cadeado from '../assets/images/cadeado.png';
-import icon from '../assets/images/iconFish.png';
-import perfil from '../assets/images/perfil.png';
 import banner from '../assets/images/bannerPeixe.jpg';
 import Card from "../components/card";
 import Foot from "../components/foot";
+// @ts-expect-error: ignore 
+import { Helmet } from 'react-helmet';
+import Header from "../components/header";
 
 
 export default function Peixe(){
@@ -29,10 +30,6 @@ export default function Peixe(){
     const [Cor] = useState("");
     const [peixes, setPeixes] = useState([]);
 
-    const [MenuisOpen, setMenuIsOpen] = useState(false);
-
-
-
 
     useEffect(() => {
 
@@ -44,7 +41,7 @@ export default function Peixe(){
             paises: Pais,
             tipo_de_agua: TipoAgua,
             tamanho: Tamanho,
-            cor: Cor
+            cor: Cor,
         }
 
         peixelandia_api.post("/peixes/find", object).then((resp) => {
@@ -74,23 +71,12 @@ export default function Peixe(){
         // @ts-expect-error: ignore 
     }, [peixe.imagem2]);
 
-    function toggleMenu(){
-        setMenuIsOpen(!MenuisOpen);
-    }
-
-    function logout(){
-        localStorage.removeItem("u");
-        window.location.href = "/";
-    }
-    
     
    
 
     useEffect(() => {
         peixelandia_api.get(`/peixes/${id}`).then((resp) => {
         setPeixe(resp.data); 
-        
-        
         })
     }, [id]);
     useEffect(() => {
@@ -127,32 +113,16 @@ export default function Peixe(){
    
     return(
         <div className="h-full bg-cover  bg-no-repeat flex flex-col" style={{backgroundImage: `url(${banner})`}}>
+        <Helmet>
+            
+            <title>{// @ts-expect-error: ignore 
+             peixe.title}</title>
+            <meta name="description" content={// @ts-expect-error: ignore 
+                peixe.descricao}/>
+        </Helmet>
             <div className="bg-white">
             <div>
-            <div className="flex flex-row pl-10 h-20 items-center">
-                <div className="w-20">
-                 <Link to={"/buscarPeixes"}><img alt="Logo do Áquario Digital" title="Aquário Digital" src={icon}/></Link>
-                </div>
-                <div className="pl-2 w-96   font-semibold  text-2xl">
-                    <p>Aquário Digital</p>
-                </div>
-                <div className="w-full flex justify-end pr-10">
-                    <img onClick={toggleMenu} className="w-9 cursor-pointer" src={perfil}/>
-                    {MenuisOpen ? 
-                        <div className="absolute mt-8 right mt-2 bg-white border border-gray-300 rounded shadow-md">
-                        <ul>
-                            <Link to={"/BuscarPeixes"}><li className="px-4 py-2 cursor-pointer hover:bg-gray-100">Home</li></Link>
-                            {localStorage.getItem("u") == null ? 
-                            <Link to={"/login"}><li className="px-4 py-2 cursor-pointer hover:bg-gray-100">Entrar</li></Link>
-                            :
-                            <li onClick={logout} className="px-4 py-2 cursor-pointer hover:bg-gray-100">Sair</li>
-                            }
-                            
-                        </ul>
-                    </div>
-                    : <div></div>}
-                </div>
-            </div>
+            <Header/>
         </div>
             </div>
             <div className="flex items-center w-full justify-center">

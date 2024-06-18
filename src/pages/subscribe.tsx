@@ -8,6 +8,9 @@ import banner from '../assets/images/banner.jpg'
 import icon from '../assets/images/iconFish.png';
 import close from '../assets/images/close.png';
 
+// @ts-expect-error: ignore 
+import { Helmet } from 'react-helmet';
+
 
 export default function Subscribe(){
     const [nome, setNome] = useState("");
@@ -101,6 +104,10 @@ export default function Subscribe(){
 
     return (
         <div className="h-screen bg-cover bg-no-repeat flex justify-center items-center " style={{backgroundImage: `url(${banner})`}}>
+             <Helmet>
+            
+            <title>Aquário Digital - Inscreva-se</title>
+            </Helmet>
             {modalIsOpen ? 
             <div className="h-screen w-screen fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50">
             <div className="bg-white w-[600px] h-[300px] rounded-lg">

@@ -49,11 +49,20 @@ export default function Header(){
                     {isOpen ? 
                         <div className="absolute mt-8 right mt-2 bg-white border border-gray-300 rounded shadow-md">
                         <ul >
+
+                            {localStorage.getItem("u") ==null ?  
+                            <div></div>
+                            :
+                            <Link to={"/profile"}><li className="px-4 py-2 cursor-pointer hover:bg-gray-100">Perfil</li></Link>
+                            }
+
                             {localStorage.getItem("u") == null ? 
                             <Link to={"/login"}><li className="px-4 py-2 cursor-pointer hover:bg-gray-100">Entrar</li></Link>
                             :
                             <li onClick={logout} className="px-4 py-2 cursor-pointer hover:bg-gray-100">Sair</li>
                         }
+
+                      
                             
                         </ul>
                     

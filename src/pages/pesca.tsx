@@ -20,7 +20,7 @@ export default function Pesca(){
                 <Header/>
             </div>
             <div className="w-full items-center flex justify-center">
-                <h2 className="text-gray-900 mt-10" style={{fontSize: "40px", fontFamily: 'Staatliches'}}>Pesca</h2>
+                <p className="text-gray-900 mt-10" style={{fontSize: "40px", fontFamily: 'Staatliches'}}>Pesca</p>
             </div>
             <div className="pl-10 pr-10 mt-5">
                 <p>A pesca é uma atividade milenar que envolve a captura de peixes e outros organismos aquáticos, como crustáceos e moluscos, com o objetivo de obter alimento, lazer ou fins comerciais. Ao longo dos séculos, a pesca evoluiu significativamente, tanto em termos de técnicas quanto de impacto ambiental e socioeconômico.</p>
